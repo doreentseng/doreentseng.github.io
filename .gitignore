@@ -2,3 +2,12 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+_posts/2012-05-22-readability-post.md
+_posts/2012-05-23-readability-feature-post.md
+_posts/2013-05-22-sample-post-images.md
+_posts/2013-06-25-video-post.md
+_posts/2013-08-16-code-highlighting-post.md
+_posts/2015-08-10-mathjax-example.md
+_posts/2016-03-20-markdown-syntax.md
+_posts/2016-03-21-moon-theme.md
