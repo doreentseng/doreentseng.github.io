@@ -74,4 +74,4 @@ The author suggest doing these three steps:
 
 ## References
 
-* <a href="https://stackoverflow.com/questions/39959900/npm-start-error-with-create-react-app" target="_blank">npm start error with create-react-app</a>
+* [npm start error with create-react-app](<https://stackoverflow.com/questions/39959900/npm-start-error-with-create-react-app> "Go")
