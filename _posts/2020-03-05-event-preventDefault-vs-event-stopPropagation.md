@@ -7,6 +7,7 @@ category: JavaScript
 tag:
 - JavaScript
 - event
+- article
 comments: true
 ---
 
