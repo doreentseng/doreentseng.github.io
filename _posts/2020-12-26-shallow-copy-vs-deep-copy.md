@@ -89,17 +89,6 @@ console.log(frank.status); // Single
 
 ## 進行拷貝的方法
 
-有一個使用情境，當使用者進入資料編輯頁面後，對他是否修改資料進行判斷：如判斷是，則 enable 更新按鈕；判斷否，則 disable 更新按鈕。以此達到性能優化、減少伺服器多餘負擔的目的。
-
-```js
-const frankInfo = {
-    "location": "Restaurant"
-    "status": "In a relationship",
-}
-
-let frankInfoCopied = "?"
-```
-
 ### 1. 手動拷貝
 
 重新對新變數進行定義。這樣做很繁瑣，一旦資料變多，會寫到往生，所以大部分情況下不會這麼寫。只有在資料量極小，並且確定不會有多層時，才有可能有機會用到。
@@ -209,6 +198,10 @@ console.log(frankInfo);
 * [Lodash](<https://lodash.com/> "Click") - [`clone`](<https://lodash.com/docs/4.17.15#clone> "Click"), [`cloneDeep`](<https://lodash.com/docs/4.17.15#cloneDeep> "Click") 
 * [AngularJS](<https://angularjs.org/> "Click") - [`angular.copy`](<https://docs.angularjs.org/api/ng/function/angular.copy> "Click")
 * [jQurey](<https://jquery.com/> "Click") - [`jQuery.extend( [true ], target, object1 [, objectN ] )`](<https://api.jquery.com/jquery.extend/> "Click")
+
+## 使用情境
+
+例子：我在開發管理系統時，需要對使用者是否修改資料的情境進行判斷：如判斷使用者確實修改資料，則 enable 「儲存」按鈕；判斷否，則 disable 「儲存」按鈕。以此達到性能優化、減少伺服器多餘負擔的目的。
 
 ---
 
