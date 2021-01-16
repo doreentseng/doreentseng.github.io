@@ -13,7 +13,7 @@ tag:
 comments: true
 ---
 
-算是第一次正式用 Golang 寫程式，對於後端很有不熟的地方，把這個功能的寫法紀錄一下，不確定是否有錯誤或不夠好的寫法，如果有更好的未來再更新。
+算是第一次正式用 Golang 寫程式，對於後端有很多不熟悉的地方，把這個功能的寫法紀錄一下，不確定是否有錯誤或不夠好的寫法，如果有更好的未來再更新。
 
 ## 使用的套件
 * [gin-gonic/gin](<https://github.com/gin-gonic/gin#single-file> "Click")
