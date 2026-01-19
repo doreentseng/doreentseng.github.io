@@ -31,10 +31,10 @@ menu:
       weight: 10
     - name: Categories
       url: categories/
-      weight: 10
+      weight: 15
     - name: Tags
       url: tags/
-      weight: 10
+      weight: 15
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
