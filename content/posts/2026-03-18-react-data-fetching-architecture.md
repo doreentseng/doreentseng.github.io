@@ -2,7 +2,7 @@
 author: "doreentseng"
 title: "大型 React 專案中 API 層的演進與分層設計"
 date: "2026-03-18"
-description: "探討在 React 專案規模逐漸擴大時，API 呼叫分散於 Component 層所帶來的維護與架構問題，並分享透過 API Layer、Service Layer、React Query Hooks 與 Component 分層設計重構資料流的實務經驗。"
+description: "探討在 React 專案規模逐漸擴大時，API 呼叫分散於 Component 層所帶來的維護與架構問題，並分享透過 API、Service、React Query Hooks 與 Component 分層設計重構資料流的實務經驗。"
 
 tags: ["react", "api design", "frontend architecture", "refactoring"]
 categories: ["frontend", "react", "architecture"]
@@ -181,9 +181,9 @@ export const deleteStudent = async (studentId) => {
 
 Hook 層介於 Service 層與 Component 層之間，它的核心目的就是：把資料獲取與狀態管理邏輯封裝起來，讓 Component 可以專注於 UI：
 
-1. **狀態自動化**：管理 loading / error / stale 等的狀態，例如 isLoading、isError、data、refetch，Component 不需要自己寫 useEffect + useState
+1. **狀態自動化**：管理 loading / error / stale 等的狀態，例如 isLoading、isError、data、refetch，component 不需要自己寫 useEffect + useState
 2. **快取與重新發送**：透過成熟的套件（如 TanStack Query），可以實現資料快取，減少重複請求。
-3. **封裝資料獲取**：直接呼叫 Service 層的 function，並返回 ready-to-use 的資料，可以把多個 Service 組合的結果封裝成單一 Hook，Component 只需要拿資料就好。
+3. **封裝資料獲取**：直接呼叫 Service 層的 function，並返回 ready-to-use 的資料，可以把多個 service 組合的結果封裝成單一 hook，component 只需要拿資料就好。
 
 `/hooks/useUsers.js`
 ```javascript
@@ -228,8 +228,8 @@ Component 層是最接近 UI 的一層，它的核心職責就是：呈現使用
 
 簡單說，Component 層專注於「畫面」，把資料邏輯交給 Hook / Service 層處理：
 1. **只負責 UI 的呈現**：不直接呼叫 API，也不做資料過濾或組合，所有資料都透過 Hook 拿到 ready-to-use 的狀態。
-2. **使用 Hook 層取得資料**：React Query hooks、Custom hooks 等都在這裡使用，包含取得的資料和取得資料的狀態等。
-3. **回傳使用者互動事件**：例如按鈕觸發 mutation（新增、刪除、更新）；Component 不處理資料細節，只呼叫 hook 提供的 mutation。
+2. **使用 Hook 層取得資料**：React Query hooks、custom hooks 等都在這裡使用，包含取得的資料和取得資料的狀態等。
+3. **回傳使用者互動事件**：例如按鈕觸發 mutation（新增、刪除、更新）；component 不處理資料細節，只呼叫 hook 提供的 mutation。
 
 `/components/StudentComponent.jsx`
 ```jsx
