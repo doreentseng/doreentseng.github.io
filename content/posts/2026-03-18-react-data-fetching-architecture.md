@@ -40,7 +40,7 @@ TocOpen: true
 ## 架構的重構：API / Service / Hook / Component
 
 
-因此，我決定重新設計資料存取的架構。將原本由 component 直接呼叫 API 並處理所有相關邏輯的做法，依責任拆分為 API 層、Service 層、Hooks 層與 Component 層。透過職責分離，讓每一層專注於單一責任，進而提升整體的可讀性、可維護性與可擴充性。
+因此，我決定重新設計資料存取的架構。將原本由 component 直接呼叫 API 並處理所有相關邏輯的做法，依責任拆分為 API 層、Service 層、Hook 層與 Component 層。透過職責分離，讓每一層專注於單一責任，進而提升整體的可讀性、可維護性與可擴充性。
 
 
 - **API 層** → 專注於處理實際的 HTTP 請求與共用設定，例如 base URL、headers、token、以及通用的錯誤攔截等。
