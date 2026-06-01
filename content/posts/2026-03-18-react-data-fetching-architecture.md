@@ -13,7 +13,7 @@ TocOpen: true
 
 🤞 完整範例：[Github Repo](https://github.com/doreentseng/react-data-fetching-architecture-example)
 &nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;
-👻 Live Demo：[點我看 demo](https://react-data-fetching-architecture-ex.vercel.app/)
+👻 Live Demo：[點我看 demo](https://react-data-fetching-architecture.vercel.app/)
 
 ---
 
@@ -330,4 +330,4 @@ export default StudentDashboard;
 
 🤞 完整範例：[Github Repo](https://github.com/doreentseng/react-data-fetching-architecture-example)
 &nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;
-👻 Live Demo：[點我看 demo](https://react-data-fetching-architecture-ex.vercel.app/)
+👻 Live Demo：[點我看 demo](https://react-data-fetching-architecture.vercel.app/)
