@@ -17,13 +17,15 @@ TocOpen: true
 
 ---
 
+## 前言
+
 專案被擴充得越來越大時，發現自己埋的坑越來越多。
 
 > 為了讓示範更清晰，本文先略過 TypeScript。
 
-## 前期 API 的呼叫方式
-
 前期開發 React 專案時，我習慣將 API 請求統一集中在資料夾 `/api` 下，由每個 component 單獨呼叫使用。
+
+---
 
 ## 專案規模擴大後出現的架構問題
 
@@ -37,8 +39,9 @@ TocOpen: true
 
 ⋯⋯
 
-## 架構的重構：API / Service / Hook / Component
+---
 
+## 架構的重構：API / Service / Hook / Component
 
 因此，我決定重新設計資料存取的架構。將原本由 component 直接呼叫 API 並處理所有相關邏輯的做法，依責任拆分為 API 層、Service 層、Hook 層與 Component 層。透過職責分離，讓每一層專注於單一責任，進而提升整體的可讀性、可維護性與可擴充性。
 
@@ -47,6 +50,8 @@ TocOpen: true
 - **Service 層** → 負責封裝業務邏輯與資料轉換，將 API 回傳的資料整理為前端實際需要的通用的資料結構。
 - **Hook 層**（我使用 TanStack Query 的 useQuery / useMutation）→ 負責資料的獲取與 server state 的管理，包含快取、重新請求、錯誤處理與狀態管理。
 - **Component 層** → 只關注 UI 呈現與互動邏輯，不再直接處理 API 呼叫與資料轉換。
+
+---
 
 ## API 層
 API 層的核心原則：
@@ -107,6 +112,8 @@ export const deleteStudent = async (studentId) => {
   return data;
 };
 ```
+
+---
 
 ## Service 層
 Service 層介於 API 層與 Hook 層／Component 層之間：
@@ -177,6 +184,8 @@ export const deleteStudent = async (studentId) => {
 };
 ```
 
+---
+
 ## Hook 層
 
 Hook 層介於 Service 層與 Component 層之間，它的核心目的就是：把資料獲取與狀態管理邏輯封裝起來，讓 Component 可以專注於 UI：
@@ -222,6 +231,8 @@ export const useDeleteStudent = (options = {}) => {
   });
 };
 ```
+
+---
 
 ## Component 層
 Component 層是最接近 UI 的一層，它的核心職責就是：呈現使用者介面，而不需要知道資料從哪裡來，也不處理複雜的資料邏輯。
@@ -323,6 +334,8 @@ function StudentDashboard() {
 
 export default StudentDashboard;
 ```
+
+---
 
 ## 🚀 完整範例 & Demo
 
